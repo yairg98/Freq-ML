@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jul  7 10:43:32 2020
-
-@author: yairg
-"""
-
 import numpy as np
 import pandas as pd
 import math
