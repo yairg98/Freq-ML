@@ -1,6 +1,8 @@
 # Freq ML Project 1 - Linear Regression
 This is the first project for Cooper Union's Frequentist Machine Learning course, ECE-475. The official assignment description is below. 
-It involved implementing and comparing three simple linear regression models: unreglarized, ridge, and lasso.
+It involved implementing and comparing three simple linear regression models: unreglarized, ridge (L2), and lasso (L1).
+
+The unreguarized and ridge regression models are implemented from scratch, while the lasso regression model utilizes the scikit-learn library. RMSE is reported on both the training and testing data for each of the three models, along with a few graphs illustrating the effects of each regularization method and the overall accuracy of linear regression on this dataset.
 
 Dataset used: https://archive.ics.uci.edu/ml/datasets/concrete+compressive+strength
 
