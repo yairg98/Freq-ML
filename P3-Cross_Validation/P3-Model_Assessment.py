@@ -41,6 +41,7 @@ def best_predictors(ds, x):
     return best
 
 
+# Given a list of the best predictors (by index) return the dataset with only those features
 def select_features(ds, best):
     X = np.transpose(ds[0])
     X_new = []
