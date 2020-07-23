@@ -6,7 +6,7 @@ This project implements a stochastic gradient descent (SGD) model from scratch, 
 Dataset used: https://archive.ics.uci.edu/ml/datasets/banknote+authentication
 
 ## Assignment Description
-Assignment 2:  Stochastic Gradient Descent
+#### Assignment 2:  Stochastic Gradient Descent
 
 Read sections: 4.1, 4.3 (not 4.3.1 and 4.3.2), 4.4-4.4.2  and the following paper:
 https://leon.bottou.org/publications/pdf/compstat-2010.pdf
