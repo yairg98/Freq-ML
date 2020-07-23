@@ -7,7 +7,7 @@ The unreguarized and ridge regression models are implemented from scratch, while
 Dataset used: https://archive.ics.uci.edu/ml/datasets/concrete+compressive+strength
 
 ## Assignment Description
-Linear Regression
+#### Linear Regression
 Read sections 3.1 -3.2.1, 3.3- 3.4.3 of Elements of Satistical Learning (can be found here: https://web.stanford.edu/~hastie/ElemStatLearn/download.html)
 
 Grab a dataset of interest from the UCI repository (or another repository), but make sure it is one that is good for regression. This means it's got numerical(not categorical) features, and the target is a continuous number.
