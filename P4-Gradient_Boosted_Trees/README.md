@@ -6,7 +6,7 @@ The simple demo can be trivially extended to L2 reguarization.
 Planning to add a grid search to optimize other parameters of XGBClassifier, replace the dataset with something larger/more complex, 
 and add plots of feature importance and/or accuracy with respect to alpha or other parameters.
 
-Dataset used:
+Dataset used: https://archive.ics.uci.edu/ml/datasets/banknote+authentication (same as project 2)
 
 ## Assignment Description
 #### Assignment 4: xTreme Gradient Boosted Trees
