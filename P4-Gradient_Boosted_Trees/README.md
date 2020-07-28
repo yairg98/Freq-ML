@@ -4,7 +4,7 @@ It used the XGBoost classifier, optimizing alpha for L1 (Lasso) regularization.
 The simple demo can be trivially extended to L2 reguarization.
 
 Planning to add a grid search to optimize other parameters of XGBClassifier, replace the dataset with something larger/more complex, 
-and add plots of feature importance and/or accuracy with respect to alpha or other parameters
+and add plots of feature importance and/or accuracy with respect to alpha or other parameters.
 
 Dataset used:
 
