@@ -66,7 +66,7 @@ validation = 'https://raw.githubusercontent.com/yairg98/Freq-ML/master/P2-Logist
 testing = 'https://raw.githubusercontent.com/yairg98/Freq-ML/master/P2-Logistic_Regression/banknote_authentication_testing.csv'
 
 # Selecting the range of alpha values to test
-S = np.linspace(0,10,101)
+S = np.linspace(0,10,11)
 
 # Loading all datasets
 ds1 = get_data(training)
