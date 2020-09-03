@@ -1,7 +1,7 @@
 # Freq ML Project 2 - Logistic Regression
 This is the second project for Cooper Union's Frequentist Machine Learning course, ECE-475. The official assignment description is included below.
 
-This project implements a stochastic gradient descent (SGD) model from scratch, and tests it both with and without L2 (ridge) regularization. Also included are functions for batch gradient descent (BGD) and mini-batch gradient descent (MBGD), which can be easily substiuted in for the SGD algorithm. The program also generates a simple visual representation of the model's logarithmic improvement with increased iterations of gradient descent.
+This project implements a linear regression model using stochastic gradient descent (SGD), and tests it both with and without L2 regularization. Also included are functions for batch gradient descent (BGD) and mini-batch gradient descent (MBGD), which can be easily substiuted in for the SGD algorithm with some tradeoffs between speed, accuracy, and efficiency. The program also generates a simple visual representation of the model's logarithmic improvement with increased iterations of gradient descent.
 
 Dataset used: https://archive.ics.uci.edu/ml/datasets/banknote+authentication
 
