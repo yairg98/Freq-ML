@@ -1,12 +1,16 @@
 # Freq ML Project 4 - Gradient Boosted Trees (with XGBoost)
 This is the fourth project for Cooper Union's Frequentist Machine Learning course.
-It used the XGBoost classifier, optimizing alpha for L1 (Lasso) regularization.
-The simple demo can be trivially extended to L2 reguarization.
+It used the XGBoost Regressor to predict house sale prices using data from the Kaggle competition linked below.
+The program usesa grid search to optimize each of several model parameters, including L1 regularization.
 
-Planning to add a grid search to optimize other parameters of XGBClassifier, replace the dataset with something larger/more complex, 
-and add plots of feature importance and/or accuracy with respect to alpha or other parameters.
+#### Results Overview:
+The mean-based baseline regressor had an RMSE of 78,837 or 43.58%.
 
-Dataset used: https://archive.ics.uci.edu/ml/datasets/banknote+authentication (same as project 2)
+The initial best-guess model had an RMSE of 5,601 or 3.10%.
+
+The grid-search optimized model had an RMSE of 2,559 or 1.43%, a significant imporvement with relatively minimal tuning.
+
+Dataset used: https://www.kaggle.com/c/house-prices-advanced-regression-techniques/
 
 ## Assignment Description
 #### Assignment 4: xTreme Gradient Boosted Trees
