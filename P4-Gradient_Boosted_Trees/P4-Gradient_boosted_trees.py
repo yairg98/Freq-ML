@@ -25,8 +25,7 @@ from sklearn.model_selection import GridSearchCV, cross_val_score
 from sklearn.dummy import DummyRegressor
 
 
-train = 'https://raw.githubusercontent.com/SunnyMarkLiu/Kaggle-House-Prices/master/data/train.csv'
-test = 'https://raw.githubusercontent.com/SunnyMarkLiu/Kaggle-House-Prices/master/data/test.csv'
+train = 'https://raw.githubusercontent.com/yairg98/Frequentist-Machine-Learning/master/P4-Gradient_Boosted_Trees/house-prices-data/train.csv'
 
     
 # Download, clean, and format data
