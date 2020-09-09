@@ -75,7 +75,7 @@ def build_model(train_data):
     grid_search = GridSearchCV(
         estimator=model, 
         param_grid=params, 
-        n_jobs = -1, 
+        n_jobs = 10,
         cv = 10, 
         verbose=True
     )
