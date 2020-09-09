@@ -98,20 +98,20 @@ ds1 = get_data(training)
 ds2 = get_data(testing)
 
 
-# # Establish a baseline acccuracy by predicting the average value for all inputs
-# baseline = baseline_rmse(ds1,ds2)
-# print("1. Baseline RMSE on testing set: "+str(round(baseline,2)))
-# print()
+# Establish a baseline acccuracy by predicting the average value for all inputs
+baseline = baseline_rmse(ds1,ds2)
+print("1. Baseline RMSE on testing set: "+str(round(baseline,2)))
+print()
 
 
-# # Train and test the random forest model on the chosen dataset
-# #   Note: parameter tuning is not shown here because it takes a while and was
-# #   ultimately ineffective, failing to find and reasonably effective RF model
-# model = build_model(ds1, 100, 20)
-# h = predict(model, ds2[0])
-# rf_rmse = RMSE(h, ds2[1])
-# print("2. Random forest RMSE on testing set: "+str(round(rf_rmse,2)))
-# print()
+# Train and test the random forest model on the chosen dataset
+#   Note: parameter tuning is not shown here because it takes a while and was
+#   ultimately ineffective, failing to find and reasonably effective RF model
+model = build_model(ds1, 1000, 20)
+h = predict(model, ds2[0])
+rf_rmse = RMSE(h, ds2[1])
+print("2. Random forest RMSE on testing set: "+str(round(rf_rmse,2)))
+print()
 
 
 # Test the same random forest and baseline models on a comparable dummy dataset
@@ -122,7 +122,7 @@ baseline = baseline_rmse(dd1,dd2)
 print("3. Baseline RMSE on dummy data: "+str(round(baseline,2)))
 print()
 
-model = build_model(dd1, 10000, None)
+model = build_model(dd1, 1000, None)
 h = predict(model, dd2[0])
 rf_rmse = RMSE(h, dd2[1])
 print("4. Random forest RMSE on dummy data: "+str(round(rf_rmse,2)))
