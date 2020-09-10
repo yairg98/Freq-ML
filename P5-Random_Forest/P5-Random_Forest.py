@@ -1,5 +1,4 @@
-
-
+#%%
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
@@ -13,6 +12,8 @@ def get_data(url):
     df = pd.read_csv(url)
     y = df['Y']
     del df['Y']
+    
+    
     columns = list(df.columns.values)
     X = df.to_numpy()
     X = np.array([(i - min(i))/(max(i) - min(i)) for i in X.T]).T
@@ -78,9 +79,7 @@ def plot_data_distribution(y, y_log=False):
     plt.show()
 
 
-
-
-
+#%%
 """
 The sklearn random forest regressor was fairly simple to use and to tune.
 However, the results were consistently bad, and only continued to deteriorate
@@ -107,7 +106,7 @@ print()
 # Train and test the random forest model on the chosen dataset
 #   Note: parameter tuning is not shown here because it takes a while and was
 #   ultimately ineffective, failing to find and reasonably effective RF model
-model = build_model(ds1, 1000, 20)
+model = build_model(ds1, 100, 20)
 h = predict(model, ds2[0])
 rf_rmse = RMSE(h, ds2[1])
 print("2. Random forest RMSE on testing set: "+str(round(rf_rmse,2)))
@@ -115,19 +114,53 @@ print()
 
 
 # Test the same random forest and baseline models on a comparable dummy dataset
-dd1 = make_regression(n_samples=32000, n_features=60, random_state=26)
-dd2 = make_regression(n_samples=3500, n_features=60, random_state=26)
+dd = make_regression(n_samples=32000, n_features=60, random_state=26)
+# dd = make_regression(n_samples=3500, n_features=60, random_state=26)
 
-baseline = baseline_rmse(dd1,dd2)
+baseline = baseline_rmse(dd,dd)
 print("3. Baseline RMSE on dummy data: "+str(round(baseline,2)))
 print()
 
-model = build_model(dd1, 1000, None)
-h = predict(model, dd2[0])
-rf_rmse = RMSE(h, dd2[1])
+model = build_model(dd, 100, None)
+h = predict(model, dd[0])
+rf_rmse = RMSE(h, dd[1])
 print("4. Random forest RMSE on dummy data: "+str(round(rf_rmse,2)))
 print()
 
 
+#%%
+'''
+As demonstrated above, the implemented random forest model significantly
+underperforms the baseline regressor (mean-based) on the chosen dataset, while
+performing pretty well on the randomly generated dummy dataset (dd) having
+similar dimensions to the original data.
 
+The underperformance of the model on the real data can likely be attributed to
+the particular characteristics of the data used:
+    1. The target distribution is highly imbalanced (exponentially decaying)
+    2. Related to the expoentially decaying nature of the distribution, there
+    are a number of extreme outliers at the high end (max > 240*avg)
 
+These characteristics of the data are demonstrated by the images plotted below.
+
+There are three potential ways of addressing the above issues and improving the
+performance of the random forest model on this data:
+    1. Logarithmically scaling or otherwise manipulating the output values to 
+    create a more level distribution for training
+    2. Eliminating outliers from the datasetm which would improve results but
+    sacrifice a potentially crucial part of the date, the most popular content
+    3. Bin the data according to your predictive goals, and turn it into a 
+    classification problem (e.g. - predicting whether content will go viral)
+'''
+
+print("Distribution of target values:")
+print("[note the log scaled y-axis and line on the left marking the average]")
+
+plt.figure()
+plt.hist(ds1[1], color = 'blue', edgecolor = 'black', bins=15, log=True)
+plt.title('Data Distribution')
+plt.ylabel('Frequency')
+plt.xlabel('Value')
+# plot a line to show where the average is
+plt.axvline(x=3500, color='r')
+plt.show()
